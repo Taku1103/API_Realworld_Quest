@@ -14,6 +14,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+  end
+
 
   def login
     @user = User.find_by(email: user_params[:email])
