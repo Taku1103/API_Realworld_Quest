@@ -6,7 +6,7 @@ class Api::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    render json: { status:"success", articles: @articles}
+    render json: { status:"index success", articles: @articles}
   end
 
   def show
