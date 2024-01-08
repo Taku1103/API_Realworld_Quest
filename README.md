@@ -1,24 +1,18 @@
-# README
+# RealWorld
+ブログプラットフォームを作る RealWorld という OSS のプロジェクトがあります。RealWorld は実世界と同じ機能を持つプラットフォームを作ることで、学習したいフレームワークの技術を習得することを目的としてたプロジェクトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ここでは、RealWorld の バックエンドの API の仕様を満たす Rails API を作成します。
 
-Things you may want to cover:
+# 使用技術
+- Ruby 3.2.2
+  - Rails 7.1.2 APImode
+  - sqlite 1.6.9
 
-* Ruby version
+# 実装したもの
+- 記事のCRUDのエンドポイント
+- 認証
+- 認可
+- 少しのエンドポイントテストコード
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 実装出来ていないもの
+- favorite機能
