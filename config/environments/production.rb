@@ -3,6 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.hosts << "tk-22.net"
   config.hosts << "10.0.0.36"
+  config.hosts << "18.179.98.59"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
