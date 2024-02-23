@@ -3,6 +3,9 @@
 
 ここでは、RealWorld の バックエンドの API の仕様を満たす Rails API を作成します。
 
+# デプロイ先
+EC2
+
 # 使用技術
 - Ruby 3.2.2
   - Rails 7.1.2 APImode
