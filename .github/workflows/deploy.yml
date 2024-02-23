@@ -35,8 +35,8 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-            cd /home/ec2-user/CD_test &&
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "\
+            cd /var/www/API_Realworld_Quest &&
             git fetch --all &&
             git reset --hard origin/main &&
-            bundle install
+            bundle install"
