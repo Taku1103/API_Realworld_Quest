@@ -45,5 +45,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key  ${USER_NAME}@${HOSTNAME} "\
             cd /var/www/API_Realworld_Quest &&
             git fetch --all &&
-            git reset --hard origin/main"
-          bundle install
+            git reset --hard origin/main
+            bundle install"
