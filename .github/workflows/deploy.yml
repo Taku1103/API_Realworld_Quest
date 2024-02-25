@@ -47,4 +47,4 @@ jobs:
             cd /var/www/API_Realworld_Quest &&
             git fetch --all &&
             git reset --hard origin/main &&
-            bundle install"
+            ~/.rbenv/shims/bundle install"
