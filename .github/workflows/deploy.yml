@@ -49,7 +49,10 @@ jobs:
             git reset --hard origin/main &&
             ~/.rbenv/shims/bundle install &&
             if [ -f tmp/pids/server.pid ]; then
-              kill -SIGTERM $(cat tmp/pids/server.pid) && rm -f tmp/pids/server.pid
+              PID=$(cat tmp/pids/server.pid)
+              if [ -n "$PID" ]; then
+                kill -SIGTERM $PID && rm -f tmp/pids/server.pid
+              fi
             fi &&
             sudo systemctl stop nginx &&
             sudo systemctl start nginx &&
