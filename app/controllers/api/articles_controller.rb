@@ -8,6 +8,8 @@ class Api::ArticlesController < ApplicationController
   end
 
   def index
+      # 例外を発生させます
+      raise "This is a test error for Sentry"
     @articles = Article.joins(:user).select('articles.*, users.username AS user_name').order('articles.created_at DESC')
     render json: { status:"index success", articles: @articles}
   end
