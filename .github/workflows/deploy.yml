@@ -35,8 +35,8 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" | sudo tee private_key > /dev/null && sudo chown root:root private_key && sudo chmod 600 private_key
-          && pwd
-          && ls -l private_key
+          pwd
+          ls -l private_key
           ssh -o StrictHostKeyChecking=no -i private_key -vvv ${USER_NAME}@${HOSTNAME} "\
             cd /var/www/API_Realworld_Quest &&
             git fetch --all &&
