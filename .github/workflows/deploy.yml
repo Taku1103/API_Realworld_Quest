@@ -61,5 +61,5 @@ jobs:
             fi &&
             sudo systemctl stop nginx &&
             sudo systemctl start nginx &&
-            screen -dm RAILS_ENV=production ~/.rbenv/shims/bundle exec pumactl start
+            screen -dm bundle exec rails s production
             "
