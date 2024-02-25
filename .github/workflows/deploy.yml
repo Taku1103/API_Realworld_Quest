@@ -50,14 +50,8 @@ jobs:
             git fetch --all &&
             git reset --hard origin/main &&
             ~/.rbenv/shims/bundle install &&
-            if [ -f tmp/pids/server.pid ]; then
-              PID=$(cat tmp/pids/server.pid)
-              echo "PID: $PID"
-              if [ -n "$PID" ]; then
-                kill -SIGTERM $PID
-              fi
-              rm -f tmp/pids/server.pid
-            fi &&
+            ~/.rbenv/shims/bundle exec rails db:migrate RAILS_ENV=production
+            if [ -e tmp/pids/server.pid ]; then PID=$(cat tmp/pids/server.pid) echo "PID: $PID" if [ -n "$PID" ]; then kill -SIGTERM $PID fi rm -f tmp/pids/server.pid fi &&
             sudo systemctl stop nginx &&
             sudo systemctl start nginx &&
             screen -dm RAILS_ENV=production ~/.rbenv/shims/bundle exec pumactl start
