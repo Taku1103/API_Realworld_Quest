@@ -4,7 +4,7 @@
 ここでは、RealWorld の バックエンドの API の仕様を満たす Rails API を作成します。
 
 # デプロイ先
-AWS EC2
+AWS/EC2
 
 # 使用技術
 - Ruby 3.2.2
