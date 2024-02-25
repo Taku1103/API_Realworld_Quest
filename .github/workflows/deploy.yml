@@ -50,5 +50,5 @@ jobs:
             ~/.rbenv/shims/bundle install &&
             sudo systemctl stop nginx &&
             sudo systemctl start nginx &&
-            RAILS_ENV=production ~/.rbenv/shims/bundle bundle exec pumactl start
+            RAILS_ENV=production ~/.rbenv/shims/bundle exec pumactl start
             "
