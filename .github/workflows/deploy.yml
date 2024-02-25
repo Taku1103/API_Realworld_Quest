@@ -28,9 +28,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2.2'
 
       - name: Deploy in Amazon EC2
         env:
