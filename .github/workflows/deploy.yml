@@ -29,9 +29,9 @@ jobs:
 
       - name: Deploy in Amazon EC2
         env:
-          PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
-          HOSTNAME: ${{ secrets.HOSTNAME  }}
-          USER_NAME: ${{ secrets.USER_NAME  }}
+          PRIVATE_KEY: ${ secrets.AWS_PRIVATE_KEY  }
+          HOSTNAME: ${ secrets.HOSTNAME  }
+          USER_NAME: ${ secrets.USER_NAME  }
 
         run: |
           echo "$PRIVATE_KEY" | sudo tee private_key > /dev/null && sudo chown root:root private_key && sudo chmod 600 private_key
