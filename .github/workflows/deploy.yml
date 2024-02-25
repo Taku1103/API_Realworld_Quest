@@ -61,5 +61,5 @@ jobs:
             fi &&
             sudo systemctl stop nginx &&
             sudo systemctl start nginx &&
-            screen -dm bundle exec rails s production
+            screen -dm bundle exec rails s -e production
             "
