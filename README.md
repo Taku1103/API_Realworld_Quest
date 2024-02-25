@@ -6,6 +6,9 @@
 # デプロイ先
 AWS/EC2
 
+# アーキテクチャイメージ
+![アーキテクチャ](AWS_conduit_infra.svg)
+
 # 使用技術
 - Ruby 3.2.2
   - Rails 7.1.2 APImode
