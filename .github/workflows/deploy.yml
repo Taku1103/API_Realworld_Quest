@@ -3,6 +3,8 @@ name: Deploy
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   test:
@@ -52,7 +54,7 @@ jobs:
               PID=$(cat tmp/pids/server.pid)
               echo "PID: $PID"
               if [ -n "$PID" ]; then
-                kill -SIGTERM $PID || true
+                kill -SIGTERM $PID
               fi
               rm -f tmp/pids/server.pid
             fi &&
