@@ -2,7 +2,10 @@ class Api::ArticlesController < ApplicationController
   # before_action :authenticate_user, only: [:create, :update, :destroy]
   before_action :set_article, only: [:show, :update, :destroy]
 
-
+  def raise_error
+    # 例外を発生させます
+    raise "This is a test error for Sentry"
+  end
 
   def index
     @articles = Article.joins(:user).select('articles.*, users.username AS user_name').order('articles.created_at DESC')
