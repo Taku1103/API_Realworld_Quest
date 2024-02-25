@@ -5,9 +5,25 @@ on:
     branches: [main]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.2"
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run tests
+        run: bundle exec rspec
 
   deploy:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +43,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key  ${USER_NAME}@${HOSTNAME} "\
             cd /var/www/API_Realworld_Quest &&
             git fetch --all &&
-            git reset --hard origin/main &&
-            bundle install"
+            git reset --hard origin/main
+          bundle install"
